@@ -14,15 +14,23 @@
 <script>
     function sendMessage() {
 		var request = new XMLHttpRequest();
-		request.open("POST", "https://discordapp.com/api/webhooks/759192651840356393/SQaEMNrxXW4ECUbcoeZAzgQpqv_dHVgrrpZ6fT6XdPIt-CXugiNwDuBRTCd65JJOzuMU");
+		request.open("POST", "");
 
 		request.setRequestHeader('Content-type', 'application/json');
 
 		var params = {
-			username: "My Webhook Name",
+			username: "Tiradadi",
 			avatar_url: "",
-			content: "The message to send"
+			content: "Kravin Sanguemarcio ha tirato un d20 ottenendo 18"
 		}
+
+		request.send(JSON.stringify(params));
+
+		params.content = ""
+		
+		request.open("POST", "https://discordapp.com/api/webhooks/759192651840356393/SQaEMNrxXW4ECUbcoeZAzgQpqv_dHVgrrpZ6fT6XdPIt-CXugiNwDuBRTCd65JJOzuMU");
+
+		request.setRequestHeader('Content-type', 'application/json');
 
 		request.send(JSON.stringify(params));
     }
