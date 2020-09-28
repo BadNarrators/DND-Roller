@@ -3,12 +3,15 @@ function loadPg(){
 
     var pg = new Object();
     pgHealthArr = array[4].split("/");
+    pgStats1 = array[6].split(")");
+    pgStats2 = array[7].split(")");
     pg.name = array[0];
     pg.class = array[1];
     pg.proficiency = array[2].slice(-2);
     pg.ac = array[3].slice(-2);
     pg.nowHealth = pgHealthArr[0].replace( /^\D+/g, '');
     pg.maxHealth = pgHealthArr[1];
+    pg.str = pgStats1.substring(5,6);
 
     var jsonString= JSON.stringify(pg);
 
