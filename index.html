@@ -5,9 +5,26 @@
 	<textarea id="pgData" cols="40" rows="20"></textarea>
 	<br><br>
 	<input type="submit" onClick="loadPg();">
+	<input type="submit" onClick="sendMessage();">
 
 </body>
 
 <script src="js/script.js"></script>
 
+<script>
+    function sendMessage() {
+		var request = new XMLHttpRequest();
+		request.open("POST", "https://discordapp.com/api/webhooks/759192651840356393/SQaEMNrxXW4ECUbcoeZAzgQpqv_dHVgrrpZ6fT6XdPIt-CXugiNwDuBRTCd65JJOzuMU");
+
+		request.setRequestHeader('Content-type', 'application/json');
+
+		var params = {
+			username: "My Webhook Name",
+			avatar_url: "",
+			content: "The message to send"
+		}
+
+		request.send(JSON.stringify(params));
+    }
+</script>
 </html>
