@@ -97,4 +97,5 @@ Dart: Attack: +8 to hit. Hit: 1d4+5 [piercing] damage.
 Rapier: Attack: +8 to hit. Hit: 1d8+5 [piercing] damage.
 Rapier, +1: Attack: +9 to hit. Hit: 1d8+6 [magical piercing] damage.
 Rifle, Hunting: Attack: +5 to hit. Hit: 2d10+5 [piercing] damage.
-Unarmed Strike: Attack: +4 to hit. Hit: 2 [bludgeoning] damage.*/
+Unarmed Strike: Attack: +4 to hit. Hit: 2 [bludgeoning] damage.
+*/
