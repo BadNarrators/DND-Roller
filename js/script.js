@@ -11,7 +11,12 @@ function loadPg(){
     pg.ac = array[3].slice(-2);
     pg.nowHealth = pgHealthArr[0].replace( /^\D+/g, '');
     pg.maxHealth = pgHealthArr[1];
-    pg.str = pgStats1[0].substring(5,6);
+    pg.str = pgStats1[0].substring(5,7);
+    pg.dex = pgStats1[1].substring(5,7);
+    pg.con = pgStats1[2].substring(5,7);
+    pg.int = pgStats2[0].substring(5,7);
+    pg.wis = pgStats2[1].substring(5,7);
+    pg.cha = pgStats2[2].substring(5,7);
 
     var jsonString= JSON.stringify(pg);
 
