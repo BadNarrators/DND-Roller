@@ -14,7 +14,7 @@
 <script>
     function sendMessage() {
 		var request = new XMLHttpRequest();
-		request.open("POST", "");
+		request.open("POST", discord_key);
 
 		request.setRequestHeader('Content-type', 'application/json');
 
@@ -28,7 +28,7 @@
 
 		params.content = ""
 		
-		request.open("POST", "https://discordapp.com/api/webhooks/759192651840356393/SQaEMNrxXW4ECUbcoeZAzgQpqv_dHVgrrpZ6fT6XdPIt-CXugiNwDuBRTCd65JJOzuMU");
+		request.open("POST", discord_key);
 
 		request.setRequestHeader('Content-type', 'application/json');
 
