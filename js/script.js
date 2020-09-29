@@ -24,7 +24,7 @@ function eraseCookie(name) {
 
 
 function loadUrl() {
-
+    if(getCookie('discordUrl') == null) setCookie('discordUrl', document.getElementById("discordUrl").value, 30);
 }
 
 
@@ -87,8 +87,9 @@ function loadPg(){
 
 function sendMessage(msg) {
 
+    var discordUrl = getCookie("discordUrl");
     var request = new XMLHttpRequest();
-    request.open("POST", "");
+    request.open("POST", discordUrl);
 
     request.setRequestHeader('Content-type', 'application/json');
 
