@@ -113,6 +113,7 @@ function sendMessage(msg) {
 function randD20(){
     let rand=Math.floor(Math.random() * 20)+1;
     if(rand===21) rand=20;
+    rand += document.getElementById("d20mod");
     return rand;
 }
 /*Kravin Sanguemarcio
