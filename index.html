@@ -1,38 +1,38 @@
 <html>
 <head>
+	<link rel="stylesheet" href="css/cookie.css">
+	<script src="http://code.jquery.com/jquery-1.6.4.min.js" type="text/javascript"></script>
 </head>
 <body>
-	<textarea id="pgData" cols="40" rows="20"></textarea>
-	<br><br>
-	<input type="submit" onClick="loadPg();">
-	<input type="submit" onClick="sendMessage();">
+	<br>
+	<div id="discordDiv"></div>
 
+	Inserisci il profilo del personaggio: <br>
+	<textarea id="pgData" cols="70" rows="25"></textarea>
+	<br><br>
+	<input type="submit" onClick="loadUrl(); loadPg(); window.location.href = 'sheet.html';">
+
+	<div id="cookieConsent">
+		<div id="closeCookieConsent">x</div>
+		This website is using cookies. <a href="#" target="_blank">More info</a>. <a class="cookieConsentOK">That's Fine</a>
+	</div>
 </body>
 
 <script src="js/script.js"></script>
-
 <script>
-    function sendMessage() {
-		var request = new XMLHttpRequest();
-		request.open("POST", "");
-
-		request.setRequestHeader('Content-type', 'application/json');
-
-		var params = {
-			username: "Tiradadi",
-			avatar_url: "",
-			content: "Kravin Sanguemarcio ha tirato un d20 ottenendo 18"
-		}
-
-		request.send(JSON.stringify(params));
-
-		params.content = ""
-		
-		request.open("POST", "https://discordapp.com/api/webhooks/759192651840356393/SQaEMNrxXW4ECUbcoeZAzgQpqv_dHVgrrpZ6fT6XdPIt-CXugiNwDuBRTCd65JJOzuMU");
-
-		request.setRequestHeader('Content-type', 'application/json');
-
-		request.send(JSON.stringify(params));
-    }
+	$(document).ready(function(){   
+		setTimeout(function () {
+			$("#cookieConsent").fadeIn(200);
+		}, 4000);
+		$("#closeCookieConsent, .cookieConsentOK").click(function() {
+			$("#cookieConsent").fadeOut(200);
+		}); 
+	}); 
 </script>
+<script>
+	if(getCookie("discordUrl") == null){
+		document.getElementById("discordDiv").innerHTML="Inserisci l'URL del canale Discord: <br><input type='text' id='discordUrl'><br><br>";
+	}
+</script>
+
 </html>

@@ -22,6 +22,12 @@ function eraseCookie(name) {
     document.cookie = name +'=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
 }
 
+
+function loadUrl() {
+
+}
+
+
 function loadPg(){
     var array = document.getElementById('pgData').value.split(/\r?\n/);
 
@@ -72,13 +78,42 @@ function loadPg(){
 
     //eraseCookie(pg.name);
     setCookie(pg.name, pg, 1);
-    if(getCookie(pg.name)) console.log("true");
+    if(getCookie(pg.name)) console.log("Cookie saved");
     else (console.log("false"));
 
     console.log(JSON.parse(jsonString));
+}    
+
+
+function sendMessage(msg) {
+
+    var request = new XMLHttpRequest();
+    request.open("POST", "");
+
+    request.setRequestHeader('Content-type', 'application/json');
+
+    var params = {
+        username: "Tiradadi",
+        avatar_url: "",
+        content: msg
+    }
+
+    request.send(JSON.stringify(params));
+
+    /*params.content = ""
+    
+    request.open("POST", "");
+
+    request.setRequestHeader('Content-type', 'application/json');
+
+    request.send(JSON.stringify(params));*/
 }
 
-
+function randD20(){
+    let rand=Math.floor(Math.random() * 20)+1;
+    if(rand===21) rand=20;
+    return rand;
+}
 /*Kravin Sanguemarcio
 Goblin Blood Hunter 5
 Proficiency Bonus: +3

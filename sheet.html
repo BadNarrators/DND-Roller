@@ -1,0 +1,28 @@
+<html>
+<head>
+	<link rel="stylesheet" href="css/cookie.css">
+	<script src="http://code.jquery.com/jquery-1.6.4.min.js" type="text/javascript"></script>
+</head>
+<body>
+    <br>Nome: <div id="name"></div>
+    <br>Razza e classe: <div id="class"></div>
+    <br>AC: <div id="ac"></div>
+    <br>HP: <div id="hp"></div>
+    <br>Iniziativa: <input type="button" id="init">
+    
+    <br><br><br>Tira un dado: <input type="button" id="d20" value="D20" onclick="let r=randD20(); sendMessage(r);">
+
+</body>
+<script src="js/script.js"></script>
+<script>
+	$(document).ready(function(){   
+		setTimeout(function () {
+			$("#cookieConsent").fadeIn(200);
+		}, 4000);
+		$("#closeCookieConsent, .cookieConsentOK").click(function() {
+			$("#cookieConsent").fadeOut(200);
+		}); 
+	}); 
+</script>
+
+</html>
