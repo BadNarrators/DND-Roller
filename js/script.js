@@ -111,9 +111,13 @@ function sendMessage(msg) {
 }
 
 function randD20(){
-    let rand=Math.floor(Math.random() * 20)+1;
+    let rand = Math.floor(Math.random() * 20)+1;
+    let mod = document.getElementById("d20mod");
     if(rand===21) rand=20;
-    rand += document.getElementById("d20mod");
+    rand += mod
+    let msg = getCookie("Kravin Sanguemarcio").name+" ha tirato un D20 ";
+    if(mod != 0) msg.concat("con modificatore "+String.toString(mod)+" ");
+    msg.concat("ottenendo "+ rand + ".");
     return rand;
 }
 /*Kravin Sanguemarcio
