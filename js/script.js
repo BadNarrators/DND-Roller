@@ -111,8 +111,10 @@ function sendMessage(msg) {
 }
 
 function randD20(){
+    var e = document.getElementById("ddlViewBy");
+    var selPg = e.options[e.selectedIndex].value;
     let rand = Math.floor(Math.random() * 20)+1;
-    let pg = JSON.parse(getCookie("Kravin Sanguemarcio"))
+    let pg = JSON.parse(getCookie(selPg))
     let name = pg.name;
     let mod = document.getElementById("d20mod").value;
     if(rand===21) rand=20;
