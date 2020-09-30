@@ -116,7 +116,8 @@ function randD20(){
     let name = pg.name;
     let mod = document.getElementById("d20mod").value;
     if(rand===21) rand=20;
-    rand += parseInt(mod);
+    if(mod)
+        rand += parseInt(mod);
     let msg = name.concat(" ha tirato un D20 ");
     if(mod != 0) msg = msg.concat("con modificatore ").concat(mod.toString()).concat(" ");
     msg = msg.concat("ottenendo ").concat(rand.toString()).concat(".");
