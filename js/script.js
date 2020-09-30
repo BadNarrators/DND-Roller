@@ -132,13 +132,15 @@ function cfgSelect(){
 	var sel = document.createElement("select");
 	$.each(document.cookie.split(/; */), function()  {
         var name = this.split('=');
+        var text;
         name = name[0];
 		console.log(name);
 		if(name!="discordUrl") {
 			sel = document.createElement("select");
+            text = document.createTextNode(name);
 			pgSel.appendChild(sel);
 			sel.setAttribute("value", name);
-			sel.appendChild(document.createTextNode(name));
+			sel.appendChild(text);
 		}
 	});
 }
