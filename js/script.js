@@ -112,7 +112,8 @@ function sendMessage(msg) {
 
 function randD20(){
     let rand = Math.floor(Math.random() * 20)+1;
-    let name = getCookie("Kravin Sanguemarcio").name;
+    let pg = JSON.parse(getCookie("Kravin Sanguemarcio"))
+    let name = pg.name;
     console.log(name);
     console.log(getCookie("Kravin Sanguemarcio"));
     let mod = document.getElementById("d20mod");
