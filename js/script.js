@@ -111,7 +111,7 @@ function sendMessage(msg) {
 }
 
 function randD20(){
-    var e = document.getElementById("ddlViewBy");
+    var e = document.getElementById("pgSelect");
     var selPg = e.options[e.selectedIndex].value;
     let rand = Math.floor(Math.random() * 20)+1;
     let pg = JSON.parse(getCookie(selPg))
