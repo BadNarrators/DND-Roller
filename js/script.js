@@ -114,6 +114,7 @@ function randD20(){
     let rand = Math.floor(Math.random() * 20)+1;
     let name = getCookie("Kravin Sanguemarcio").name;
     console.log(name);
+    console.log(getCookie("Kravin Sanguemarcio"));
     let mod = document.getElementById("d20mod");
     if(rand===21) rand=20;
     rand += mod
