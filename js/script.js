@@ -121,7 +121,8 @@ function randD20(){
     let msg = name.concat(" ha tirato un D20 ");
     if(mod != 0) msg = msg.concat("con modificatore ").concat(String.toString(mod)).concat(" ");
     msg = msg.concat("ottenendo ").concat(rand).concat(".");
-    return rand;
+    console.log(msg);
+    return msg;
 }
 /*Kravin Sanguemarcio
 Goblin Blood Hunter 5
