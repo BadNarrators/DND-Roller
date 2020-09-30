@@ -131,7 +131,8 @@ function cfgSelect(){
     var pgSel = document.getElementById("pgSelect");
 	var sel = document.createElement("select");
 	$.each(document.cookie.split(/; */), function()  {
-		var name = this.split('=');
+        var name = this.split('=');
+        name = name[0];
 		console.log(name);
 		if(name!="discordUrl") {
 			sel = document.createElement("select");
