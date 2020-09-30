@@ -112,10 +112,12 @@ function sendMessage(msg) {
 
 function randD20(){
     let rand = Math.floor(Math.random() * 20)+1;
+    let name = getCookie("Kravin Sanguemarcio").name;
+    console.log(name);
     let mod = document.getElementById("d20mod");
     if(rand===21) rand=20;
     rand += mod
-    let msg = JSON.parse(getCookie("Kravin Sanguemarcio")).name.concat(" ha tirato un D20 ");
+    let msg = name.concat(" ha tirato un D20 ");
     if(mod != 0) msg = msg.concat("con modificatore ").concat(String.toString(mod)).concat(" ");
     msg = msg.concat("ottenendo ").concat(rand).concat(".");
     return rand;
