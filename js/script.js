@@ -115,7 +115,6 @@ function randD20(){
     let pg = JSON.parse(getCookie("Kravin Sanguemarcio"))
     let name = pg.name;
     console.log(name);
-    console.log(getCookie("Kravin Sanguemarcio"));
     let mod = document.getElementById("d20mod");
     if(rand===21) rand=20;
     rand += mod
