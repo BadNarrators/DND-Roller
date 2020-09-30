@@ -114,14 +114,13 @@ function randD20(){
     let rand = Math.floor(Math.random() * 20)+1;
     let pg = JSON.parse(getCookie("Kravin Sanguemarcio"))
     let name = pg.name;
-    console.log(name);
-    let mod = document.getElementById("d20mod");
+    let mod = document.getElementById("d20mod").value;
     if(rand===21) rand=20;
-    rand += mod
+    rand += parseInt(mod);
     let msg = name.concat(" ha tirato un D20 ");
-    if(mod != 0) msg = msg.concat("con modificatore ").concat(String.toString(mod)).concat(" ");
-    msg = msg.concat("ottenendo ").concat(rand).concat(".");
-    console.log(msg);
+    if(mod != 0) msg = msg.concat("con modificatore ").concat(mod.toString()).concat(" ");
+    msg = msg.concat("ottenendo ").concat(rand.toString()).concat(".");
+    //console.log(msg);
     return msg;
 }
 /*Kravin Sanguemarcio
