@@ -126,6 +126,21 @@ function randD20(){
     //console.log(msg);
     return msg;
 }
+
+function cfgSelect(){
+    var pgSel = document.getElementById("pgSelect");
+	var sel = document.createElement("select");
+	$.each(document.cookie.split(/; */), function()  {
+		var name = this.split('=');
+		console.log(name);
+		if(name!="discordUrl") {
+			sel = document.createElement("select");
+			pgSel.appendChild(sel);
+			sel.setAttribute("value", name);
+			sel.appendChild(document.createTextNode(name));
+		}
+	});
+}
 /*Kravin Sanguemarcio
 Goblin Blood Hunter 5
 Proficiency Bonus: +3

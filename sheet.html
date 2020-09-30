@@ -10,17 +10,7 @@
 	<select name="pgSel" id="pgSelect">
 		<option value="newPg">--Nuovo personaggio--</option>
 		<script>
-			var pgSel = document.getElementById("pgSelect");
-			var sel = document.createElement("select");
-			$.each(document.cookie.split(/; */), function()  {
-				var name = this.split('=');
-				if(name!="discordUrl") {
-					sel = document.createElement("select");
-					pgSel.appendChild(sel);
-					sel.setAttribute("value", name);
-					sel.appendChild(document.createTextNode(name));
-				}
-			});
+			cfgSelect();
 		</script>
 	</select>
 	<br><br>
