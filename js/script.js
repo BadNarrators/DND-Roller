@@ -76,8 +76,8 @@ function loadPg(){
 
     var jsonString= JSON.stringify(pg);
 
-    eraseCookie(pg.name);
-    setCookie(pg.name, jsonString, 1);
+    //eraseCookie(pg.name);
+    setCookie(pg.name, jsonString, 2);
     if(getCookie(pg.name)) console.log("Cookie saved");
     else (console.log("false"));
 
