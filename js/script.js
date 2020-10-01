@@ -135,13 +135,21 @@ function cfgSelect(){
         var text;
         name = name[0];
 		console.log(name);
+        var o = new Option(name, name);
+        /// jquerify the DOM object 'o' so we can use the html method
+        $(o).html(name);
+        $("#pgSelect").append(o);
+        /*var name = this.split('=');
+        var text;
+        name = name[0];
+		console.log(name);
 		if(name!="discordUrl") {
 			sel = document.createElement("select");
             text = document.createTextNode(name);
 			pgSel.appendChild(sel);
 			sel.setAttribute("value", name);
 			sel.appendChild(text);
-		}
+		}*/
 	});
 }
 /*Kravin Sanguemarcio
