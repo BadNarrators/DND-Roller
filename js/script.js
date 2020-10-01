@@ -157,6 +157,33 @@ function cfgSelect(){
 		}*/
 	});
 }
+
+
+function siteChangeSheet(){
+    var e = document.getElementById("pgSelect");
+    var selPg = e.options[e.selectedIndex].value;
+    console.log("test");
+    if(selPg = "newPg"){
+        console.log("test3");
+        window.open("index.html","_self")
+    }else{
+        console.log("test2");
+        setCookie("selected", selPg, 1);
+        window.open("sheet.html","_self");
+    }	
+}
+function siteChangeIndex(){
+    var e = document.getElementById("pgSelect");
+    var selPg = e.options[e.selectedIndex].value;
+    console.log("test");
+    if(selPg != "newPg"){
+        console.log("test2");
+        setCookie("selected", selPg, 1);
+        window.open("sheet.html","_self")
+    }
+}
+
+
 /*Kravin Sanguemarcio
 Goblin Blood Hunter 5
 Proficiency Bonus: +3

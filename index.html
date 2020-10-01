@@ -8,7 +8,7 @@
 </head>
 <body>
 	Seleziona il personaggio: 
-	<select name="pgSel" id="pgSelect">
+	<select name="pgSel" id="pgSelect" onchange="siteChangeIndex();">
 		<option value="newPg">--Nuovo personaggio--</option>
 		<script>
 			cfgSelect();
@@ -42,18 +42,6 @@
 	if(getCookie("discordUrl") == null){
 		document.getElementById("discordDiv").innerHTML="Inserisci l'URL del canale Discord: <br><input type='text' id='discordUrl'><br><br>";
 	}
-</script>
-<script>
-	$("pgSel").on('change', function(){
-		var e = document.getElementById("pgSelect");
-		var selPg = e.options[e.selectedIndex].value;
-		console.log("test");
-		if(selPg != "newPg"){
-			console.log("test2");
-			setCookie("selected", selPg, 1);
-			window.open("sheet.html","_self")
-		}
-  	});
 </script>
 
 </html>

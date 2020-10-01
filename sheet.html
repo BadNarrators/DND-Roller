@@ -8,7 +8,7 @@
 </head>
 <body>
 	Seleziona il personaggio: 
-	<select name="pgSel" id="pgSelect">
+	<select name="pgSel" id="pgSelect" onchange="siteChangeSheet();">
 		<option value="newPg">--Nuovo personaggio--</option>
 		<script>
 			cfgSelect();
@@ -37,21 +37,6 @@
 <script>
 	//let pg = JSON.parse(getCookie("Kravin Sanguemarcio"));
 	//document.getElementById("name")
-</script>
-<script>
-	$("pgSel").on('change', function(){
-		var e = document.getElementById("pgSelect");
-		var selPg = e.options[e.selectedIndex].value;
-		console.log("test");
-		if(selPg = "newPg"){
-			console.log("test3");
-			window.open("index.html","_self")
-		}else{
-			console.log("test2");
-			setCookie("selected", selPg, 1);
-			window.open("sheet.html","_self");
-		}	
-  	});
 </script>
 
 </html>
