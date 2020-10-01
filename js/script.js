@@ -115,12 +115,12 @@ function sendMessage(msg) {
 function randD20(){
     //var e = document.getElementById("pgSelect");
     //var selPg = e.options[e.selectedIndex].value;
-    let name = sessionStorage.getItem("selected");
+    let name = getcookie("selected")[2];
     let rand = Math.floor(Math.random() * 20)+1;
     //let pg = JSON.parse(getCookie(selPg))
     //let name = pg.name;
     name="**`".concat(name).concat("`**");
-    let mod = document.getElementById("d20mod").value.name;
+    let mod = document.getElementById("d20mod").value;
     if(rand===21) rand=20;
     if(mod)
         rand += parseInt(mod);
