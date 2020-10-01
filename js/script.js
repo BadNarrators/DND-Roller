@@ -120,7 +120,7 @@ function randD20(){
     //let pg = JSON.parse(getCookie(selPg))
     //let name = pg.name;
     name="**`".concat(name).concat("`**");
-    let mod = document.getElementById("d20mod").value;
+    let mod = document.getElementById("d20mod").value.name;
     if(rand===21) rand=20;
     if(mod)
         rand += parseInt(mod);
