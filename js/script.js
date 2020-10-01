@@ -91,6 +91,8 @@ function sendMessage(msg) {
     var request = new XMLHttpRequest();
     request.open("POST", discordUrl);
 
+    //msg = "```bash \n".concat(msg).concat("\n ```");
+
     request.setRequestHeader('Content-type', 'application/json');
 
     var params = {
@@ -111,11 +113,13 @@ function sendMessage(msg) {
 }
 
 function randD20(){
-    var e = document.getElementById("pgSelect");
-    var selPg = e.options[e.selectedIndex].value;
+    //var e = document.getElementById("pgSelect");
+    //var selPg = e.options[e.selectedIndex].value;
+    let selectedName = sessionStorage.getItem("selected");
     let rand = Math.floor(Math.random() * 20)+1;
     let pg = JSON.parse(getCookie(selPg))
     let name = pg.name;
+    name="**`".concat(name).concat("`**");
     let mod = document.getElementById("d20mod").value;
     if(rand===21) rand=20;
     if(mod)
@@ -134,11 +138,12 @@ function cfgSelect(){
         var name = this.split('=');
         var text;
         name = name[0];
-		console.log(name);
-        var o = new Option(name, name);
-        /// jquerify the DOM object 'o' so we can use the html method
-        $(o).html(name);
-        $("#pgSelect").append(o);
+        console.log(name);
+        if(name != "discordUrl"){
+            var o = new Option(name, name);
+            $(o).html(name);
+            $("#pgSelect").append(o);
+        }
         /*var name = this.split('=');
         var text;
         name = name[0];

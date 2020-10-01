@@ -38,5 +38,17 @@
 	//let pg = JSON.parse(getCookie("Kravin Sanguemarcio"));
 	//document.getElementById("name")
 </script>
+<script>
+	$("pgSel").change(function(){
+		var e = document.getElementById("pgSelect");
+		var selPg = e.options[e.selectedIndex].value;
+		if(selPg = "newPg"){
+			window.open("index.html","_self")
+		}else{
+			sessionStorage.setItem("selected", selPg.name);
+			window.open("sheet.html","_self")
+		}
+  	});
+</script>
 
 </html>
