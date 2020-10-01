@@ -44,7 +44,7 @@
 	}
 </script>
 <script>
-	$("pgSel").change(function(){
+	$("pgSel").on('change', function(){
 		var e = document.getElementById("pgSelect");
 		var selPg = e.options[e.selectedIndex].value;
 		if(selPg != "newPg"){
