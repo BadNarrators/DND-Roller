@@ -137,7 +137,7 @@ function cfgSelect(){
 	$.each(document.cookie.split(/; */), function()  {
         var name = this.split('=');
         var text;
-        name = name[0];
+        name = name[1];
         console.log(name);
         if(name != "discordUrl"){
             var o = new Option(name, name);
