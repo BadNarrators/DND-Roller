@@ -42,11 +42,14 @@
 	$("pgSel").on('change', function(){
 		var e = document.getElementById("pgSelect");
 		var selPg = e.options[e.selectedIndex].value;
+		console.log("test");
 		if(selPg = "newPg"){
+			console.log("test3");
 			window.open("index.html","_self")
 		}else{
-			sessionStorage.setItem("selected", selPg.name);
-			window.open("sheet.html","_self")
+			console.log("test2");
+			setCookie("selected", selPg, 1);
+			window.open("sheet.html","_self");
 		}	
   	});
 </script>
