@@ -183,6 +183,12 @@ function siteChangeIndex(){
     }
 }
 
+function sheetPage(){
+    sel = getCookie("selected");
+    pg = getCookie(sel);
+    document.getElementById("name").innerHTML = pg.name;
+}
+
 
 /*Kravin Sanguemarcio
 Goblin Blood Hunter 5
