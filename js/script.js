@@ -163,7 +163,7 @@ function siteChangeSheet(){
     var e = document.getElementById("pgSelect");
     var selPg = e.options[e.selectedIndex].value;
     console.log("test");
-    if(selPg = "newPg"){
+    if(selPg == "newPg"){
         console.log("test3");
         window.open("index.html","_self")
     }else{
