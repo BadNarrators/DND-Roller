@@ -179,7 +179,7 @@ function siteChangeIndex(){
     if(selPg != "newPg"){
         console.log("test2");
         setCookie("selected", selPg, 1);
-        window.open("sheet.html","_self")
+        window.open("sheet.html","_self");
     }
 }
 
