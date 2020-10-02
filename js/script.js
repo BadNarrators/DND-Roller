@@ -185,9 +185,9 @@ function siteChangeIndex(){
 
 function sheetPage(){
     sel = getCookie("selected");
-    console.log(sel);
-    pg = getCookie(sel);
-    console.log(pg);
+    //console.log(sel);
+    pg = JSON.parse(getCookie(sel));
+    //console.log(pg);
     document.getElementById("name").innerHTML += pg.name;
 }
 
