@@ -115,7 +115,8 @@ function sendMessage(msg) {
 function randD20(){
     //var e = document.getElementById("pgSelect");
     //var selPg = e.options[e.selectedIndex].value;
-    let name = getCookie("selected");
+    let pg = JSON.parse(getCookie(sel));
+    let name = pg.name;
     let rand = Math.floor(Math.random() * 20)+1;
     //let pg = JSON.parse(getCookie(selPg))
     //let name = pg.name;
