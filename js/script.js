@@ -189,6 +189,9 @@ function sheetPage(){
     pg = JSON.parse(getCookie(sel));
     //console.log(pg);
     document.getElementById("name").innerHTML += pg.name;
+    document.getElementById("class").innerHTML += pg.class;
+    document.getElementById("ac").innerHTML += pg.ac;
+    document.getElementById("hp").innerHTML += pg.nowHealth.concat("/").concat(pg.maxHealth);
 }
 
 
