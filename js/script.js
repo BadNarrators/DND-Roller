@@ -139,7 +139,7 @@ function cfgSelect(){
         var text;
         name = name[0];
         console.log(name);
-        if(name != "discordUrl"){
+        if(name != "discordUrl" && name != "selected"){
             var o = new Option(name, name);
             $(o).html(name);
             $("#pgSelect").append(o);
