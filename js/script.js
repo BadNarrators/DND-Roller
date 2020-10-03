@@ -135,6 +135,8 @@ function soloD20(){
         rand += parseInt(mod);
     if(mod != 0) msg = msg.concat("con modificatore ").concat(mod.toString()).concat(" ");
     msg = msg.concat("ottenendo ").concat(rand.toString()).concat(".");
+    
+    return msg;
 }
 
 function cfgSelect(){
