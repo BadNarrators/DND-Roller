@@ -165,7 +165,7 @@ function checkD20(type){
         case "dexSave":
             typename = "salvezza destrezza";
             mod = pg.dexMod;
-            if(ps.saveProf.includes("dex")) mod += pg.proficiency;
+            if(pg.saveProf.includes("dex")) mod += pg.proficiency;
             //else if (pg.joat)
             break;
             
@@ -178,7 +178,7 @@ function checkD20(type){
     if(mod>=0)
         msg = msg.concat(" + ").concat(mod).concat(").");
     else
-        msg = msg.concat("  ").concat(mod.abs()).concat(").");
+        msg = msg.concat("  ").concat(Math.abs(mod)).concat(").");
 
     sendMessage(msg);
 }
