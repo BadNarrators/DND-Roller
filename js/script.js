@@ -157,7 +157,11 @@ function checkD20(type){
 
     let tot = rand + mod;
 
-    msg = msg.concat(typename).concat(" ottenendo ").concat(rand).concat("(").concat(rand).concat(" + ").concat(mod).concat(").");
+    msg = msg.concat(typename).concat(" ottenendo ").concat(rand).concat(" (").concat(rand)
+    if(mod>=0)
+        msg = msg.concat(" + ").concat(mod).concat(").");
+    else
+        msg = msg.concat("  ").concat(mod.abs()).concat(").");
 
     sendMessage(msg);
 }
