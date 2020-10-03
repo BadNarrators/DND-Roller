@@ -73,6 +73,8 @@ function loadPg(){
         k = k.substring(1, k.length-3).replace(/\s/g, '');
         pg.skillProf.push(k);
     });
+    pg.joat = false; //jack of all trades, bard feature
+    if(array[5].substring(11, array[5].length) > pg.dexMod) pg.joat = true;
 
     var jsonString= JSON.stringify(pg);
 
@@ -152,7 +154,22 @@ function checkD20(type){
         case "init":
             typename = "iniziativa";
             mod = pg.dexMod;
+            if(pg.joat) mod += Math.floor(pg.proficiency/2);
             break;
+        
+        case "dex":
+            typename = "destrezza";
+            mod = pg.dexMod;
+            break;
+            
+        case "dexSave":
+            typename = "salvezza destrezza";
+            mod = pg.dexMod;
+            if(ps.saveProf.includes("dex")) mod += pg.proficiency;
+            //else if (pg.joat)
+            break;
+            
+        
     }
 
     let tot = rand + mod;

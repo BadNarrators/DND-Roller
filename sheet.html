@@ -19,8 +19,22 @@
     <br><div id="name">Nome: </div>
     <br><div id="class">Razza e classe: </div>
     <br><div id="ac">AC: </div>
-    <br><div id="hp">HP: </div>
-    <br>Iniziativa: <input type="button" id="init" onclick="checkD20('init');">
+	<br><div id="hp">HP: </div>
+	
+	<br>Iniziativa: <input type="button" id="init" onclick="checkD20('init');">
+	
+	<br><br><input type="button" id="str" onclick="checkD20('str');" value="Strength check: ">
+	&nbsp&nbsp&nbsp&nbsp <input type="button" id="strSave" onClick="checkD20('strSave');" value="Strength saving throw: ">
+	<br><input type="button" id="dex" onclick="checkD20('dex');" value="Dexterity check: ">
+	&nbsp&nbsp&nbsp&nbsp <input type="button" id="dexSave" onClick="checkD20('dexSave');" value="Dexterity saving throw: ">
+	<br><input type="button" id="con" onclick="checkD20('con');" value="Constitution check: ">
+	&nbsp&nbsp&nbsp&nbsp <input type="button" id="conSave" onClick="checkD20('conSave');" value="Constitution saving throw: ">
+	<br><input type="button" id="int" onclick="checkD20('int');" value="Intelligence check: ">
+	&nbsp&nbsp&nbsp&nbsp <input type="button" id="intSave" onClick="checkD20('intSave');" value="Intelligence saving throw: ">
+	<br><input type="button" id="wis" onclick="checkD20('wis');" value="Wisdom check: ">
+	&nbsp&nbsp&nbsp&nbsp <input type="button" id="wisSave" onClick="checkD20('wisSave');" value="Wisdom saving throw: ">
+	<br><input type="button" id="cha" onclick="checkD20('cha');" value="Charisma check: ">
+	&nbsp&nbsp&nbsp&nbsp <input type="button" id="chaSave" onClick="checkD20('chaSave');" value="Charism saving throw: ">
     
 	<br><br><br>Tira un dado: <input type="button" id="d20" value="D20" onclick="let r=soloD20(); sendMessage(r);"> &nbsp&nbsp&nbsp Mod:<input type="number" id="d20mod" size="3">
 	<br><br><br><br><br><input type="button" id="resetUrl" value="Resetta l'URL del canale Discord" onClick="eraseCookie('discordUrl'); window.open('index.html','_self');">
