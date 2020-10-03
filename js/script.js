@@ -115,21 +115,26 @@ function sendMessage(msg) {
 function randD20(){
     //var e = document.getElementById("pgSelect");
     //var selPg = e.options[e.selectedIndex].value;
-    let pg = JSON.parse(getCookie(sel));
-    let name = pg.name;
     let rand = Math.floor(Math.random() * 20)+1;
     //let pg = JSON.parse(getCookie(selPg))
     //let name = pg.name;
-    name="**`".concat(name).concat("`**");
-    let mod = document.getElementById("d20mod").value;
     if(rand===21) rand=20;
+    //console.log(msg);
+    return rand;
+}
+
+function soloD20(){
+    let pg = JSON.parse(getCookie(sel));
+    let name = pg.name;
+    name="**`".concat(name).concat("`**");
+    let rand = randD20();
+    let mod = document.getElementById("d20mod").value;
+    let msg = name.concat(" ha tirato un D20 ");
+
     if(mod)
         rand += parseInt(mod);
-    let msg = name.concat(" ha tirato un D20 ");
     if(mod != 0) msg = msg.concat("con modificatore ").concat(mod.toString()).concat(" ");
     msg = msg.concat("ottenendo ").concat(rand.toString()).concat(".");
-    //console.log(msg);
-    return msg;
 }
 
 function cfgSelect(){
@@ -193,6 +198,7 @@ function sheetPage(){
     document.getElementById("class").innerHTML += pg.class;
     document.getElementById("ac").innerHTML += pg.ac;
     document.getElementById("hp").innerHTML += pg.nowHealth.concat("/").concat(pg.maxHealth);
+    document.getElementById("init").value += pg.dexMod;
 }
 
 
