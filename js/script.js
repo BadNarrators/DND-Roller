@@ -146,16 +146,19 @@ function checkD20(type){
     let msg = name.concat(" ha tirato ");
     let rand = randD20();
     let typename = "";
+    let mod = 0;
 
     switch(type){
         case "init":
             typename = "iniziativa";
-            rand += pg.dexMod;
+            mod = pg.dexMod;
             break;
     }
 
-    msg = msg.concat(typename).concat(" ottenendo ").concat(rand).concat(".");
-    
+    let tot = rand + mod;
+
+    msg = msg.concat(typename).concat(" ottenendo ").concat(rand).concat("(").concat(rand).concat(" + ").concat(mod).concat(").");
+
     sendMessage(msg);
 }
 
