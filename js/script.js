@@ -135,8 +135,28 @@ function soloD20(){
         rand += parseInt(mod);
     if(mod != 0) msg = msg.concat("con modificatore ").concat(mod.toString()).concat(" ");
     msg = msg.concat("ottenendo ").concat(rand.toString()).concat(".");
-    
+
     return msg;
+}
+
+function checkD20(type){
+    let pg = JSON.parse(getCookie(sel));
+    let name = pg.name;
+    name="**`".concat(name).concat("`**");
+    let msg = name.concat(" ha tirato ");
+    let rand = randD20();
+    let typename = "";
+
+    switch(type){
+        case "init":
+            typename = "iniziativa";
+            rand += pg.dexMod;
+            break;
+    }
+
+    msg = msg.concat(typename).concat(" ottenendo ").concat(rand).concat(".");
+    
+    sendMessage(msg);
 }
 
 function cfgSelect(){
@@ -202,6 +222,7 @@ function sheetPage(){
     document.getElementById("hp").innerHTML += pg.nowHealth.concat("/").concat(pg.maxHealth);
     document.getElementById("init").value += pg.dexMod;
 }
+
 
 
 /*Kravin Sanguemarcio
