@@ -168,6 +168,17 @@ function checkD20(type){
             if(pg.saveProf.includes("dex")) mod += pg.proficiency;
             //else if (pg.joat)
             break;
+        
+        case "str":
+            typename = "forza";
+            mod = pg.strMod;
+            break;
+
+        case "strSave":
+            typename = "salvezza forza";
+            mod = pg.dexMod;
+            if(pg.saveProf.includes("str")) mod += pg.proficiency;
+            break;
             
         
     }
