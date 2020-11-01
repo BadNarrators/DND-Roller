@@ -8,14 +8,17 @@
 	<script src="js/script.js"></script>
 </head>
 <body>
-	Seleziona il personaggio: 
-	<select name="pgSel" id="pgSelect" onchange="siteChangeSheet();">
-		<option >(apri la lista dei personaggi)</option>
-		<option value="newPg">--Nuovo personaggio--</option>
-		<script>
-			cfgSelect();
-		</script>
-	</select>
+	<div id="pgDiv" style="float:left">
+		Seleziona il personaggio: 
+		<select name="pgSel" id="pgSelect" onchange="siteChangeSheet();">
+			<option >(apri la lista dei personaggi)</option>
+			<option value="newPg">--Nuovo personaggio--</option>
+			<script>
+				cfgSelect();
+			</script>
+		</select>
+	</div>
+	<div id="diceDiv" style="float:right"></div>
 	<br><br>
     <br><div id="name">Nome: </div>
     <br><div id="class">Razza e classe: </div>
@@ -24,49 +27,51 @@
 	
 	<br>Iniziativa: <input type="button" id="init" onclick="checkD20('init');">
 	
+	<br><br>
 	<div id="defChecks">
-		<br><br><input class="defCheck" type="button" id="str" onclick="checkD20('str');" value="Strength check: ">
+		<div style="width:120; height:30; float:left"></div><div class="save" id="baseDiv">Tiri base</div><div style="width:20px; height:30px; float:left"></div><div class="save" id="saveDiv">Tiri salvezza</div>
+		<br><br><div class="stat" id="strDiv">Forza: </div><input class="defCheck" type="button" id="str" onclick="checkD20('str');" value="Strength check: ">
 		&nbsp&nbsp&nbsp&nbsp <input class="defCheck" type="button" id="strSave" onClick="checkD20('strSave');" value="Strength saving throw: ">
-		<br><input class="defCheck" type="button" id="dex" onclick="checkD20('dex');" value="Dexterity check: ">
+		<br><div class="stat" id="dexDiv">Destrezza: </div><input class="defCheck" type="button" id="dex" onclick="checkD20('dex');" value="Dexterity check: ">
 		&nbsp&nbsp&nbsp&nbsp <input class="defCheck" type="button" id="dexSave" onClick="checkD20('dexSave');" value="Dexterity saving throw: ">
-		<br><input class="defCheck" type="button" id="con" onclick="checkD20('con');" value="Constitution check: ">
+		<br><div class="stat" id="conDiv">Costituzione: </div><input class="defCheck" type="button" id="con" onclick="checkD20('con');" value="Constitution check: ">
 		&nbsp&nbsp&nbsp&nbsp <input class="defCheck" type="button" id="conSave" onClick="checkD20('conSave');" value="Constitution saving throw: ">
-		<br><input class="defCheck" type="button" id="int" onclick="checkD20('int');" value="Intelligence check: ">
+		<br><div class="stat" id="intDiv">Intelligenza: </div><input class="defCheck" type="button" id="int" onclick="checkD20('int');" value="Intelligence check: ">
 		&nbsp&nbsp&nbsp&nbsp <input class="defCheck" type="button" id="intSave" onClick="checkD20('intSave');" value="Intelligence saving throw: ">
-		<br><input class="defCheck" type="button" id="wis" onclick="checkD20('wis');" value="Wisdom check: ">
+		<br><div class="stat" id="wisDiv">Saggezza: </div><input class="defCheck" type="button" id="wis" onclick="checkD20('wis');" value="Wisdom check: ">
 		&nbsp&nbsp&nbsp&nbsp <input class="defCheck" type="button" id="wisSave" onClick="checkD20('wisSave');" value="Wisdom saving throw: ">
-		<br><input class="defCheck" type="button" id="cha" onclick="checkD20('cha');" value="Charisma check: ">
+		<br><div class="stat" id="chaDiv">Carisma: </div><input class="defCheck" type="button" id="cha" onclick="checkD20('cha');" value="Charisma check: ">
 		&nbsp&nbsp&nbsp&nbsp <input class="defCheck" type="button" id="chaSave" onClick="checkD20('chaSave');" value="Charisma saving throw: ">
 	</div>
 	<br><br><br>
 	<div id="skillChecksUpper">
 		<div id="skillChecks_Str" class="skillChecksDiv">
-			<input class="skillCheckBtn" type="button" id="ath" onclick="checkD20('ath');" value="Athletics check: ">
+			<input class="skillCheckBtn" type="button" id="athletics" onclick="checkD20('ath');" value="Athletics check: ">
 		</div>
 		<div id="skillChecks_Dex" class="skillChecksDiv">
-			<input class="skillCheckBtn" type="button" id="acr" onclick="checkD20('acr');" value="Acrobatics check: ">
-			<input class="skillCheckBtn" type="button" id="sle" onclick="checkD20('sle');" value="Sleight of hand check: ">
-			<input class="skillCheckBtn" type="button" id="sth" onclick="checkD20('sth');" value="Stealth check: ">
+			<input class="skillCheckBtn" type="button" id="acrobatics" onclick="checkD20('acr');" value="Acrobatics check: ">
+			<input class="skillCheckBtn" type="button" id="sleight of hand" onclick="checkD20('sle');" value="Sleight of hand check: ">
+			<input class="skillCheckBtn" type="button" id="stealth" onclick="checkD20('sth');" value="Stealth check: ">
 		</div>
 		<div id="skillChecks_Int" class="skillChecksDiv">
-			<input class="skillCheckBtn" type="button" id="arc" onclick="checkD20('arc');" value="Arcana check: ">
-			<input class="skillCheckBtn" type="button" id="his" onclick="checkD20('his');" value="History check: ">
-			<input class="skillCheckBtn" type="button" id="inv" onclick="checkD20('inv');" value="Investigation check: ">
-			<input class="skillCheckBtn" type="button" id="nat" onclick="checkD20('nat');" value="Nature check: ">
-			<input class="skillCheckBtn" type="button" id="rel" onclick="checkD20('rel');" value="Religion check: ">
+			<input class="skillCheckBtn" type="button" id="arcana" onclick="checkD20('arc');" value="Arcana check: ">
+			<input class="skillCheckBtn" type="button" id="history" onclick="checkD20('his');" value="History check: ">
+			<input class="skillCheckBtn" type="button" id="investigation" onclick="checkD20('inv');" value="Investigation check: ">
+			<input class="skillCheckBtn" type="button" id="nature" onclick="checkD20('nat');" value="Nature check: ">
+			<input class="skillCheckBtn" type="button" id="religion" onclick="checkD20('rel');" value="Religion check: ">
 		</div>
 		<div id="skillChecks_Wis" class="skillChecksDiv">
-			<input class="skillCheckBtn" type="button" id="anh" onclick="checkD20('anh');" value="Animal handling check: ">
-			<input class="skillCheckBtn" type="button" id="ins" onclick="checkD20('ins');" value="Insight check: ">
-			<input class="skillCheckBtn" type="button" id="med" onclick="checkD20('med');" value="Medicine check: ">
-			<input class="skillCheckBtn" type="button" id="pec" onclick="checkD20('pec');" value="Perception check: ">
-			<input class="skillCheckBtn" type="button" id="sur" onclick="checkD20('sur');" value="Survival check: ">
+			<input class="skillCheckBtn" type="button" id="animal handling" onclick="checkD20('anh');" value="Animal handling check: ">
+			<input class="skillCheckBtn" type="button" id="insight" onclick="checkD20('ins');" value="Insight check: ">
+			<input class="skillCheckBtn" type="button" id="medicine" onclick="checkD20('med');" value="Medicine check: ">
+			<input class="skillCheckBtn" type="button" id="perception" onclick="checkD20('pec');" value="Perception check: ">
+			<input class="skillCheckBtn" type="button" id="survival" onclick="checkD20('sur');" value="Survival check: ">
 		</div>
 		<div id="skillChecks_Cha" class="skillChecksDiv">
-			<input class="skillCheckBtn" type="button" id="dec" onclick="checkD20('dec');" value="Deception check: ">
-			<input class="skillCheckBtn" type="button" id="inm" onclick="checkD20('inm');" value="Intimidation check: ">
-			<input class="skillCheckBtn" type="button" id="pef" onclick="checkD20('pef');" value="Performance check: ">
-			<input class="skillCheckBtn" type="button" id="pes" onclick="checkD20('pes');" value="Persuasion check: ">
+			<input class="skillCheckBtn" type="button" id="deception" onclick="checkD20('dec');" value="Deception check: ">
+			<input class="skillCheckBtn" type="button" id="intimidation" onclick="checkD20('inm');" value="Intimidation check: ">
+			<input class="skillCheckBtn" type="button" id="performance" onclick="checkD20('pef');" value="Performance check: ">
+			<input class="skillCheckBtn" type="button" id="persuasion" onclick="checkD20('pes');" value="Persuasion check: ">
 		</div>
 	</div>
 	

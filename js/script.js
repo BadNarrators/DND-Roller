@@ -105,6 +105,10 @@ function sendMessage(msg) {
 
     request.send(JSON.stringify(params));
 
+    msg = msg.replace(/\*/g, "");
+    //console.log(msg);
+    document.getElementById("diceDiv").innerHTML = msg;
+
     /*params.content = ""
     
     request.open("POST", "");
@@ -399,6 +403,11 @@ function siteChangeIndex(){
     }
 }
 
+function plusAdd(val){
+    if(val >= 0) return "+".concat(val);
+    else return val;
+}
+
 function sheetPage(){
     sel = getCookie("selected");
     //console.log(sel);
@@ -408,7 +417,47 @@ function sheetPage(){
     document.getElementById("class").innerHTML += pg.class;
     document.getElementById("ac").innerHTML += pg.ac;
     document.getElementById("hp").innerHTML += pg.nowHealth.concat("/").concat(pg.maxHealth);
+    //document.getElementById("hp").innerHTML = "HP: <input type='number' value='".concat(pg.maxHealth).concat("' style='width:40px'></input>").concat("/").concat(pg.maxHealth);
     document.getElementById("init").value += pg.dexMod;
+
+    /*var div = document.getElementById("defChecks"),
+        checks = div.getElementsByClassName("defCheck");
+    for(var k = 0; k < checks.length; k++){
+        var elem = checks[k];
+
+    }*/
+
+    document.getElementById("strDiv").innerHTML += pg.str; 
+    document.getElementById("dexDiv").innerHTML += pg.dex;
+    document.getElementById("conDiv").innerHTML += pg.con;
+    document.getElementById("intDiv").innerHTML += pg.int;
+    document.getElementById("wisDiv").innerHTML += pg.wis;
+    document.getElementById("chaDiv").innerHTML += pg.cha;
+
+    /*document.getElementById("str").value = "Strength check: ".concat(plusAdd(pg.strMod));
+    document.getElementById("dex").value = "Dexterity check: ".concat(plusAdd(pg.dexMod));
+    document.getElementById("con").value = "Constitution check: ".concat(plusAdd(pg.conMod));
+    document.getElementById("int").value = "Intelligence check: ".concat(plusAdd(pg.intMod));
+    document.getElementById("wis").value = "Wisdom check: ".concat(plusAdd(pg.wisMod));
+    document.getElementById("cha").value = "Charisma check: ".concat(plusAdd(pg.chaMod));*/
+    document.getElementById("str").value = plusAdd(pg.strMod);
+    document.getElementById("dex").value = plusAdd(pg.dexMod);
+    document.getElementById("con").value = plusAdd(pg.conMod);
+    document.getElementById("int").value = plusAdd(pg.intMod);
+    document.getElementById("wis").value = plusAdd(pg.wisMod);
+    document.getElementById("cha").value = plusAdd(pg.chaMod);
+    if(pg.saveProf.includes("str")) document.getElementById("strSave").value = plusAdd(parseInt(pg.strMod)+parseInt(pg.proficiency));
+    else document.getElementById("strSave").value = plusAdd(pg.strMod);
+    if(pg.saveProf.includes("dex")) document.getElementById("dexSave").value = plusAdd(parseInt(pg.dexMod)+parseInt(pg.proficiency));
+    else document.getElementById("dexSave").value = plusAdd(pg.dexMod);
+    if(pg.saveProf.includes("con")) document.getElementById("conSave").value = plusAdd(parseInt(pg.conMod)+parseInt(pg.proficiency));
+    else document.getElementById("conSave").value = plusAdd(pg.conMod);
+    if(pg.saveProf.includes("int")) document.getElementById("intSave").value = plusAdd(parseInt(pg.intMod)+parseInt(pg.proficiency));
+    else document.getElementById("intSave").value = plusAdd(pg.intMod);
+    if(pg.saveProf.includes("wis")) document.getElementById("wisSave").value = plusAdd(parseInt(pg.wisMod)+parseInt(pg.proficiency));
+    else document.getElementById("wisSave").value = plusAdd(pg.wisMod);
+    if(pg.saveProf.includes("cha")) document.getElementById("chaSave").value = plusAdd(parseInt(pg.chaMod)+parseInt(pg.proficiency));
+    else document.getElementById("chaSave").value = plusAdd(pg.chaMod);
 }
 
 
