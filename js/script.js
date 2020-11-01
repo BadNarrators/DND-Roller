@@ -320,7 +320,7 @@ function checkD20(type){
             if(pg.skillProf.includes("Religion")) mod = parseInt(mod)+parseInt(pg.proficiency);
             break;
             
-        case "slh":
+        case "sle":
             typename = "velocità di mano";
             mod = pg.dexMod;
             if(pg.skillProf.includes("Sleight of hand")) mod = parseInt(mod)+parseInt(pg.proficiency);
