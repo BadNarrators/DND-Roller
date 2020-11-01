@@ -42,7 +42,15 @@
 </script>
 <script>
 	if(getCookie("discordUrl") == null){
-		document.getElementById("discordDiv").innerHTML="Inserisci l'URL del canale Discord: <br><input type='text' id='discordUrl'><br><br>";
+		document.getElementById("discordDiv").innerHTML="Inserisci l'URL del canale Discord: <br><input type='text' id='discordUrl'><br>";
+		var btn = document.createElement("input");
+		btn.type="button";
+		btn.onclick="loadUrl();";
+		btn.style="float:left";
+		btn.value="Imposta URL";
+		document.getElementById("discordDiv").appendChild(btn);
+		document.getElementById("discordDiv").appendChild(document.createElement("br"));
+		document.getElementById("discordDiv").appendChild(document.createElement("br"));
 	}
 </script>
 
