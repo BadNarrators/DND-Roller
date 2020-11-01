@@ -24,21 +24,57 @@
 	
 	<br>Iniziativa: <input type="button" id="init" onclick="checkD20('init');">
 	
-	<br><br><input class="defCheck" type="button" id="str" onclick="checkD20('str');" value="Strength check: ">
-	&nbsp&nbsp&nbsp&nbsp <input class="defCheck" type="button" id="strSave" onClick="checkD20('strSave');" value="Strength saving throw: ">
-	<br><input class="defCheck" type="button" id="dex" onclick="checkD20('dex');" value="Dexterity check: ">
-	&nbsp&nbsp&nbsp&nbsp <input class="defCheck" type="button" id="dexSave" onClick="checkD20('dexSave');" value="Dexterity saving throw: ">
-	<br><input class="defCheck" type="button" id="con" onclick="checkD20('con');" value="Constitution check: ">
-	&nbsp&nbsp&nbsp&nbsp <input class="defCheck" type="button" id="conSave" onClick="checkD20('conSave');" value="Constitution saving throw: ">
-	<br><input class="defCheck" type="button" id="int" onclick="checkD20('int');" value="Intelligence check: ">
-	&nbsp&nbsp&nbsp&nbsp <input class="defCheck" type="button" id="intSave" onClick="checkD20('intSave');" value="Intelligence saving throw: ">
-	<br><input class="defCheck" type="button" id="wis" onclick="checkD20('wis');" value="Wisdom check: ">
-	&nbsp&nbsp&nbsp&nbsp <input class="defCheck" type="button" id="wisSave" onClick="checkD20('wisSave');" value="Wisdom saving throw: ">
-	<br><input class="defCheck" type="button" id="cha" onclick="checkD20('cha');" value="Charisma check: ">
-	&nbsp&nbsp&nbsp&nbsp <input class="defCheck" type="button" id="chaSave" onClick="checkD20('chaSave');" value="Charism saving throw: ">
-    
-	<br><br><br>Tira un dado: <input type="button" id="d20" value="D20" onclick="let r=soloD20(); sendMessage(r);"> &nbsp&nbsp&nbsp Mod:<input type="number" id="d20mod" size="3">
-	<br><br><br><br><br><input type="button" id="resetUrl" value="Resetta l'URL del canale Discord" onClick="eraseCookie('discordUrl'); window.open('index.html','_self');">
+	<div id="defChecks">
+		<br><br><input class="defCheck" type="button" id="str" onclick="checkD20('str');" value="Strength check: ">
+		&nbsp&nbsp&nbsp&nbsp <input class="defCheck" type="button" id="strSave" onClick="checkD20('strSave');" value="Strength saving throw: ">
+		<br><input class="defCheck" type="button" id="dex" onclick="checkD20('dex');" value="Dexterity check: ">
+		&nbsp&nbsp&nbsp&nbsp <input class="defCheck" type="button" id="dexSave" onClick="checkD20('dexSave');" value="Dexterity saving throw: ">
+		<br><input class="defCheck" type="button" id="con" onclick="checkD20('con');" value="Constitution check: ">
+		&nbsp&nbsp&nbsp&nbsp <input class="defCheck" type="button" id="conSave" onClick="checkD20('conSave');" value="Constitution saving throw: ">
+		<br><input class="defCheck" type="button" id="int" onclick="checkD20('int');" value="Intelligence check: ">
+		&nbsp&nbsp&nbsp&nbsp <input class="defCheck" type="button" id="intSave" onClick="checkD20('intSave');" value="Intelligence saving throw: ">
+		<br><input class="defCheck" type="button" id="wis" onclick="checkD20('wis');" value="Wisdom check: ">
+		&nbsp&nbsp&nbsp&nbsp <input class="defCheck" type="button" id="wisSave" onClick="checkD20('wisSave');" value="Wisdom saving throw: ">
+		<br><input class="defCheck" type="button" id="cha" onclick="checkD20('cha');" value="Charisma check: ">
+		&nbsp&nbsp&nbsp&nbsp <input class="defCheck" type="button" id="chaSave" onClick="checkD20('chaSave');" value="Charisma saving throw: ">
+	</div>
+	<br><br><br>
+	<div id="skillChecksUpper">
+		<div id="skillChecks_Str" class="skillChecksDiv">
+			<input class="skillCheckBtn" type="button" id="ath" onclick="checkD20('ath');" value="Athletics check: ">
+		</div>
+		<div id="skillChecks_Dex" class="skillChecksDiv">
+			<input class="skillCheckBtn" type="button" id="acr" onclick="checkD20('acr');" value="Acrobatics check: ">
+			<input class="skillCheckBtn" type="button" id="sle" onclick="checkD20('sle');" value="Sleight of hand check: ">
+			<input class="skillCheckBtn" type="button" id="sth" onclick="checkD20('sth');" value="Stealth check: ">
+		</div>
+		<div id="skillChecks_Int" class="skillChecksDiv">
+			<input class="skillCheckBtn" type="button" id="arc" onclick="checkD20('arc');" value="Arcana check: ">
+			<input class="skillCheckBtn" type="button" id="his" onclick="checkD20('his');" value="History check: ">
+			<input class="skillCheckBtn" type="button" id="inv" onclick="checkD20('inv');" value="Investigation check: ">
+			<input class="skillCheckBtn" type="button" id="nat" onclick="checkD20('nat');" value="Nature check: ">
+			<input class="skillCheckBtn" type="button" id="rel" onclick="checkD20('rel');" value="Religion check: ">
+		</div>
+		<div id="skillChecks_Wis" class="skillChecksDiv">
+			<input class="skillCheckBtn" type="button" id="anh" onclick="checkD20('anh');" value="Animal handling check: ">
+			<input class="skillCheckBtn" type="button" id="ins" onclick="checkD20('ins');" value="Insight check: ">
+			<input class="skillCheckBtn" type="button" id="med" onclick="checkD20('med');" value="Medicine check: ">
+			<input class="skillCheckBtn" type="button" id="pec" onclick="checkD20('pec');" value="Perception check: ">
+			<input class="skillCheckBtn" type="button" id="sur" onclick="checkD20('sur');" value="Survival check: ">
+		</div>
+		<div id="skillChecks_Cha" class="skillChecksDiv">
+			<input class="skillCheckBtn" type="button" id="dec" onclick="checkD20('dec');" value="Deception check: ">
+			<input class="skillCheckBtn" type="button" id="inm" onclick="checkD20('inm');" value="Intimidation check: ">
+			<input class="skillCheckBtn" type="button" id="pef" onclick="checkD20('pef');" value="Performance check: ">
+			<input class="skillCheckBtn" type="button" id="pes" onclick="checkD20('pes');" value="Persuasion check: ">
+		</div>
+	</div>
+	
+	<div style="position:absolute; bottom:0">
+		Tira un dado: <input type="button" id="d20" value="D20" onclick="let r=soloD20(); sendMessage(r);"> &nbsp&nbsp&nbsp Mod:<input type="number" id="d20mod" size="3">
+		<br><br><br><br><br><input type="button" id="resetUrl" value="Resetta l'URL del canale Discord" onClick="eraseCookie('discordUrl'); window.open('index.html','_self');">
+		<br><br>
+	</div>
 
 </body>
 <script>
