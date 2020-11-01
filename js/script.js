@@ -416,7 +416,9 @@ function sheetPage(){
     document.getElementById("name").innerHTML += pg.name;
     document.getElementById("class").innerHTML += pg.class;
     document.getElementById("ac").innerHTML += pg.ac;
-    document.getElementById("hp").innerHTML += pg.nowHealth.concat("/").concat(pg.maxHealth);
+    //document.getElementById("hp").innerHTML += pg.nowHealth.concat("/").concat(pg.maxHealth);
+    document.getElementById("hpNow").innerHTML = pg.maxHealth;
+    document.getElementById("hpMax").innerHTML = pg.maxHealth;
     //document.getElementById("hp").innerHTML = "HP: <input type='number' value='".concat(pg.maxHealth).concat("' style='width:40px'></input>").concat("/").concat(pg.maxHealth);
     document.getElementById("init").value += pg.dexMod;
 
@@ -458,6 +460,19 @@ function sheetPage(){
     else document.getElementById("wisSave").value = plusAdd(pg.wisMod);
     if(pg.saveProf.includes("cha")) document.getElementById("chaSave").value = plusAdd(parseInt(pg.chaMod)+parseInt(pg.proficiency));
     else document.getElementById("chaSave").value = plusAdd(pg.chaMod);
+}
+
+function changeHP(type){
+    let val = parseInt(document.getElementById("hpValue").value);
+    let hp = parseInt(document.getElementById("hpNow").innerHTML);
+
+    if(type == "dmg") val -= val*2;
+
+    hp += val;
+
+    if(hp > pg.maxHealth) hp = pg.maxHealth;
+
+    document.getElementById("hpNow").innerHTML = hp;
 }
 
 

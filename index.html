@@ -44,8 +44,8 @@
 	if(getCookie("discordUrl") == null){
 		document.getElementById("discordDiv").innerHTML="Inserisci l'URL del canale Discord: <br><input type='text' id='discordUrl'><br>";
 		var btn = document.createElement("input");
-		btn.type="button";
-		btn.onclick="loadUrl();";
+		btn.type="submit";
+		btn.setAttribute("onClick","setCookie('discordUrl', document.getElementById('discordUrl').value, 30); console.log('test');");
 		btn.style="float:left";
 		btn.value="Imposta URL";
 		document.getElementById("discordDiv").appendChild(btn);
