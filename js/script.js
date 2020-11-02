@@ -515,10 +515,10 @@ function sheetPage(){
     for(var i = 0; i < subDiv.length; i++) {
         var elem = subDiv[i];
         var val = parseInt(pg.chaMod);
-        if(pg.skillProf.includes(elem.id)) {
+        if(pg.skillProf.includes(elem.id.charAt(0).toUpperCase().concat(elem.id.slice(1)))) {
             val += pg.proficiency;
         }
-        if(pg.skillProf.includes(elem.id.charAt(0).toUpperCase().concat(elem.id.slice(1)))) {
+        if(val >= 0) val = "+".concat(val);
         elem.value = elem.value.concat(val);
     }
 }
