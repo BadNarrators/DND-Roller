@@ -467,7 +467,7 @@ function sheetPage(){
     for(var i = 0; i < subDiv.length; i++) {
         var elem = subDiv[i];
         var val = parseInt(pg.strMod);
-        if(pg.skillProf.includes(elem.id)) {
+        if(pg.skillProf.includes(elem.id.charAt(0).toUpperCase().concat(elem.id.slice(1)))) {
             val += pg.proficiency;
         }
         if(val >= 0) val = "+".concat(val);
@@ -479,7 +479,7 @@ function sheetPage(){
     for(var i = 0; i < subDiv.length; i++) {
         var elem = subDiv[i];
         var val = parseInt(pg.dexMod);
-        if(pg.skillProf.includes(elem.id)) {
+        if(pg.skillProf.includes(elem.id.charAt(0).toUpperCase().concat(elem.id.slice(1)))) {
             val += pg.proficiency;
         }
         if(val >= 0) val = "+".concat(val);
@@ -491,7 +491,7 @@ function sheetPage(){
     for(var i = 0; i < subDiv.length; i++) {
         var elem = subDiv[i];
         var val = parseInt(pg.intMod);
-        if(pg.skillProf.includes(elem.id)) {
+        if(pg.skillProf.includes(elem.id.charAt(0).toUpperCase().concat(elem.id.slice(1)))) {
             val += pg.proficiency;
         }
         if(val >= 0) val = "+".concat(val);
@@ -503,7 +503,7 @@ function sheetPage(){
     for(var i = 0; i < subDiv.length; i++) {
         var elem = subDiv[i];
         var val = parseInt(pg.wisMod);
-        if(pg.skillProf.includes(elem.id)) {
+        if(pg.skillProf.includes(elem.id.charAt(0).toUpperCase().concat(elem.id.slice(1)))) {
             val += pg.proficiency;
         }
         if(val >= 0) val = "+".concat(val);
@@ -518,7 +518,7 @@ function sheetPage(){
         if(pg.skillProf.includes(elem.id)) {
             val += pg.proficiency;
         }
-        if(val >= 0) val = "+".concat(val);
+        if(pg.skillProf.includes(elem.id.charAt(0).toUpperCase().concat(elem.id.slice(1)))) {
         elem.value = elem.value.concat(val);
     }
 }
