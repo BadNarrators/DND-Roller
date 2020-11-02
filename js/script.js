@@ -67,12 +67,19 @@ function loadPg(){
         }
     });
     pg.skillProf = [];
+    pg.skillExp = [];
     array[9].slice(-(array[9].length-20)).split(",").forEach(function(k){
-        if(k.substring(k.length-4, k.length-1) == "adv") {
-            k = k.substring(0, k.length-5);
+        //console.log(k.substring(k.length-10, k.length-1));
+        if(k.substring(k.length-10, k.length-1) == "expertise"){
+            k = k.substring(1, k.length-14).replace(/\s/g, '');
+            pg.skillExp.push(k);
+        }else{
+            if(k.substring(k.length-4, k.length-1) == "adv") {
+                k = k.substring(0, k.length-5);
+            }
+            k = k.substring(1, k.length-3).replace(/\s/g, '');
+            pg.skillProf.push(k);
         }
-        k = k.substring(1, k.length-3).replace(/\s/g, '');
-        pg.skillProf.push(k);
     });
     pg.joat = false; //jack of all trades, bard feature
     if(array[1].substring((array[1].length)-2, array[1].length).replace(/\D/g, "") >= 2 && array[1].replace(/[0-9]/g, '').substring(array[1].length-4, array[1].length)) pg.joat = true;
@@ -238,6 +245,7 @@ function checkD20(type){
             typename = "acrobazia";
             mod = pg.dexMod;
             if(pg.skillProf.includes("Acrobatics")) mod = parseInt(mod)+parseInt(pg.proficiency);
+            else if(pg.skillExp.includes("Acrobatics")) mod = parseInt(mod)+parseInt(pg.proficiency*2);
             else if(pg.joat) mod = parseInt(mod)+parseInt(Math.floor(pg.proficiency/2));
             break;
             
@@ -245,6 +253,7 @@ function checkD20(type){
             typename = "manipolazione animali";
             mod = pg.wisMod;
             if(pg.skillProf.includes("Animal handling")) mod = parseInt(mod)+parseInt(pg.proficiency);
+            else if(pg.skillExp.includes("Animal handling")) mod = parseInt(mod)+parseInt(pg.proficiency*2);
             else if(pg.joat) mod = parseInt(mod)+parseInt(Math.floor(pg.proficiency/2));
             break;
             
@@ -252,6 +261,7 @@ function checkD20(type){
             typename = "arcana";
             mod = pg.intMod;
             if(pg.skillProf.includes("Arcana")) mod = parseInt(mod)+parseInt(pg.proficiency);
+            else if(pg.skillExp.includes("Arcana")) mod = parseInt(mod)+parseInt(pg.proficiency*2);
             else if(pg.joat) mod = parseInt(mod)+parseInt(Math.floor(pg.proficiency/2));
             break;            
 
@@ -259,6 +269,7 @@ function checkD20(type){
             typename = "atletica";
             mod = pg.strMod;
             if(pg.skillProf.includes("Athletics")) mod = parseInt(mod)+parseInt(pg.proficiency);
+            else if(pg.skillExp.includes("Athletics")) mod = parseInt(mod)+parseInt(pg.proficiency*2);
             else if(pg.joat) mod = parseInt(mod)+parseInt(Math.floor(pg.proficiency/2));
             break;
 
@@ -266,6 +277,7 @@ function checkD20(type){
             typename = "inganno";
             mod = pg.chaMod;
             if(pg.skillProf.includes("Deception")) mod = parseInt(mod)+parseInt(pg.proficiency);
+            else if(pg.skillExp.includes("Deception")) mod = parseInt(mod)+parseInt(pg.proficiency*2);
             else if(pg.joat) mod = parseInt(mod)+parseInt(Math.floor(pg.proficiency/2));
             break;
             
@@ -273,6 +285,7 @@ function checkD20(type){
             typename = "storia";
             mod = pg.intMod;
             if(pg.skillProf.includes("History")) mod = parseInt(mod)+parseInt(pg.proficiency);
+            else if(pg.skillExp.includes("History")) mod = parseInt(mod)+parseInt(pg.proficiency*2);
             else if(pg.joat) mod = parseInt(mod)+parseInt(Math.floor(pg.proficiency/2));
             break;
 
@@ -280,6 +293,7 @@ function checkD20(type){
             typename = "intuito";
             mod = pg.wisMod;
             if(pg.skillProf.includes("Insight")) mod = parseInt(mod)+parseInt(pg.proficiency);
+            else if(pg.skillExp.includes("Insight")) mod = parseInt(mod)+parseInt(pg.proficiency*2);
             else if(pg.joat) mod = parseInt(mod)+parseInt(Math.floor(pg.proficiency/2));
             break;
             
@@ -287,6 +301,7 @@ function checkD20(type){
             typename = "intimidazione";
             mod = pg.chaMod;
             if(pg.skillProf.includes("Intimidation")) mod = parseInt(mod)+parseInt(pg.proficiency);
+            else if(pg.skillExp.includes("Intimidation")) mod = parseInt(mod)+parseInt(pg.proficiency*2);
             else if(pg.joat) mod = parseInt(mod)+parseInt(Math.floor(pg.proficiency/2));
             break;
             
@@ -294,6 +309,7 @@ function checkD20(type){
             typename = "investigazione";
             mod = pg.intMod;
             if(pg.skillProf.includes("Investigation")) mod = parseInt(mod)+parseInt(pg.proficiency);
+            else if(pg.skillExp.includes("Investigation")) mod = parseInt(mod)+parseInt(pg.proficiency*2);
             else if(pg.joat) mod = parseInt(mod)+parseInt(Math.floor(pg.proficiency/2));
             break;
 
@@ -301,6 +317,7 @@ function checkD20(type){
             typename = "medicina";
             mod = pg.wisMod;
             if(pg.skillProf.includes("Medicine")) mod = parseInt(mod)+parseInt(pg.proficiency);
+            else if(pg.skillExp.includes("Medicine")) mod = parseInt(mod)+parseInt(pg.proficiency*2);
             else if(pg.joat) mod = parseInt(mod)+parseInt(Math.floor(pg.proficiency/2));
             break;
             
@@ -308,6 +325,7 @@ function checkD20(type){
             typename = "natura";
             mod = pg.intMod;
             if(pg.skillProf.includes("Nature")) mod = parseInt(mod)+parseInt(pg.proficiency);
+            else if(pg.skillExp.includes("Nature")) mod = parseInt(mod)+parseInt(pg.proficiency*2);
             else if(pg.joat) mod = parseInt(mod)+parseInt(Math.floor(pg.proficiency/2));
             break;
 
@@ -315,6 +333,7 @@ function checkD20(type){
             typename = "percezione";
             mod = pg.wisMod;
             if(pg.skillProf.includes("Perception")) mod = parseInt(mod)+parseInt(pg.proficiency);
+            else if(pg.skillExp.includes("Perception")) mod = parseInt(mod)+parseInt(pg.proficiency*2);
             else if(pg.joat) mod = parseInt(mod)+parseInt(Math.floor(pg.proficiency/2));
             break;
             
@@ -322,6 +341,7 @@ function checkD20(type){
             typename = "performance";
             mod = pg.chaMod;
             if(pg.skillProf.includes("Performance")) mod = parseInt(mod)+parseInt(pg.proficiency);
+            else if(pg.skillExp.includes("Performance")) mod = parseInt(mod)+parseInt(pg.proficiency*2);
             else if(pg.joat) mod = parseInt(mod)+parseInt(Math.floor(pg.proficiency/2));
             break;
 
@@ -329,6 +349,7 @@ function checkD20(type){
             typename = "persuasione";
             mod = pg.chaMod;
             if(pg.skillProf.includes("Persuasion")) mod = parseInt(mod)+parseInt(pg.proficiency);
+            else if(pg.skillExp.includes("Persuasion")) mod = parseInt(mod)+parseInt(pg.proficiency*2);
             else if(pg.joat) mod = parseInt(mod)+parseInt(Math.floor(pg.proficiency/2));
             break;
 
@@ -336,6 +357,7 @@ function checkD20(type){
             typename = "religione";
             mod = pg.intMod;
             if(pg.skillProf.includes("Religion")) mod = parseInt(mod)+parseInt(pg.proficiency);
+            else if(pg.skillExp.includes("Religion")) mod = parseInt(mod)+parseInt(pg.proficiency*2);
             else if(pg.joat) mod = parseInt(mod)+parseInt(Math.floor(pg.proficiency/2));
             break;
             
@@ -343,6 +365,7 @@ function checkD20(type){
             typename = "velocità di mano";
             mod = pg.dexMod;
             if(pg.skillProf.includes("Sleight of hand")) mod = parseInt(mod)+parseInt(pg.proficiency);
+            else if(pg.skillExp.includes("Sleight of hand")) mod = parseInt(mod)+parseInt(pg.proficiency*2);
             else if(pg.joat) mod = parseInt(mod)+parseInt(Math.floor(pg.proficiency/2));
             break;
 
@@ -350,6 +373,7 @@ function checkD20(type){
             typename = "stealth";
             mod = pg.dexMod;
             if(pg.skillProf.includes("Stealth")) mod = parseInt(mod)+parseInt(pg.proficiency);
+            else if(pg.skillExp.includes("Stealth")) mod = parseInt(mod)+parseInt(pg.proficiency*2);
             else if(pg.joat) mod = parseInt(mod)+parseInt(Math.floor(pg.proficiency/2));
             break;
             
@@ -357,6 +381,7 @@ function checkD20(type){
             typename = "sopravvivenza";
             mod = pg.wisMod;
             if(pg.skillProf.includes("Survival")) mod = parseInt(mod)+parseInt(pg.proficiency);
+            else if(pg.skillExp.includes("Survival")) mod = parseInt(mod)+parseInt(pg.proficiency*2);
             else if(pg.joat) mod = parseInt(mod)+parseInt(Math.floor(pg.proficiency/2));
             break;
             
@@ -524,7 +549,10 @@ function sheetPage(){
         var val = parseInt(pg.strMod);
         if(pg.skillProf.includes(elem.id.charAt(0).toUpperCase().concat(elem.id.slice(1)))) {
             val += parseInt(pg.proficiency);
-        }else if(pg.joat) val += Math.floor(parseInt(pg.proficiency)/2);
+        }else if(pg.skillExp.includes(elem.id.charAt(0).toUpperCase().concat(elem.id.slice(1)))) {
+            val += parseInt(pg.proficiency)*2;
+        }
+        else if(pg.joat) val += Math.floor(parseInt(pg.proficiency)/2);
         if(val >= 0) val = "+".concat(val);
         elem.value = elem.value.concat(val);
     }
@@ -536,6 +564,8 @@ function sheetPage(){
         var val = parseInt(pg.dexMod);
         if(pg.skillProf.includes(elem.id.charAt(0).toUpperCase().concat(elem.id.slice(1)))) {
             val += parseInt(pg.proficiency);
+        }else if(pg.skillExp.includes(elem.id.charAt(0).toUpperCase().concat(elem.id.slice(1)))) {
+            val += parseInt(pg.proficiency)*2;
         }else if(pg.joat) val += Math.floor(parseInt(pg.proficiency)/2);
         if(val >= 0) val = "+".concat(val);
         elem.value = elem.value.concat(val);
@@ -548,6 +578,8 @@ function sheetPage(){
         var val = parseInt(pg.intMod);
         if(pg.skillProf.includes(elem.id.charAt(0).toUpperCase().concat(elem.id.slice(1)))) {
             val += parseInt(pg.proficiency);
+        }else if(pg.skillExp.includes(elem.id.charAt(0).toUpperCase().concat(elem.id.slice(1)))) {
+            val += parseInt(pg.proficiency)*2;
         }else if(pg.joat) val += Math.floor(parseInt(pg.proficiency)/2);
         if(val >= 0) val = "+".concat(val);
         elem.value = elem.value.concat(val);
@@ -560,6 +592,8 @@ function sheetPage(){
         var val = parseInt(pg.wisMod);
         if(pg.skillProf.includes(elem.id.charAt(0).toUpperCase().concat(elem.id.slice(1)))) {
             val += parseInt(pg.proficiency);
+        }else if(pg.skillExp.includes(elem.id.charAt(0).toUpperCase().concat(elem.id.slice(1)))) {
+            val += parseInt(pg.proficiency)*2;
         }else if(pg.joat) val += Math.floor(parseInt(pg.proficiency)/2);
         if(val >= 0) val = "+".concat(val);
         elem.value = elem.value.concat(val);
@@ -572,6 +606,8 @@ function sheetPage(){
         var val = parseInt(pg.chaMod);
         if(pg.skillProf.includes(elem.id.charAt(0).toUpperCase().concat(elem.id.slice(1)))) {
             val += parseInt(pg.proficiency);
+        }else if(pg.skillExp.includes(elem.id.charAt(0).toUpperCase().concat(elem.id.slice(1)))) {
+            val += parseInt(pg.proficiency)*2;
         }else if(pg.joat) val += Math.floor(parseInt(pg.proficiency)/2);
         if(val >= 0) val = "+".concat(val);
         elem.value = elem.value.concat(val);
