@@ -460,6 +460,67 @@ function sheetPage(){
     else document.getElementById("wisSave").value = plusAdd(pg.wisMod);
     if(pg.saveProf.includes("cha")) document.getElementById("chaSave").value = plusAdd(parseInt(pg.chaMod)+parseInt(pg.proficiency));
     else document.getElementById("chaSave").value = plusAdd(pg.chaMod);
+
+    var div = document.getElementById("skillChecks_Str"),
+        subDiv = div.getElementsByClassName('skillCheckBtn'),
+        myArray = [];
+    for(var i = 0; i < subDiv.length; i++) {
+        var elem = subDiv[i];
+        var val = parseInt(pg.strMod);
+        if(pg.skillProf.includes(elem.id)) {
+            val += pg.proficiency;
+        }
+        if(val >= 0) val = "+".concat(val);
+        elem.value = elem.value.concat(val);
+    }
+    div = document.getElementById("skillChecks_Dex"),
+        subDiv = div.getElementsByClassName('skillCheckBtn'),
+        myArray = [];
+    for(var i = 0; i < subDiv.length; i++) {
+        var elem = subDiv[i];
+        var val = parseInt(pg.dexMod);
+        if(pg.skillProf.includes(elem.id)) {
+            val += pg.proficiency;
+        }
+        if(val >= 0) val = "+".concat(val);
+        elem.value = elem.value.concat(val);
+    }
+    div = document.getElementById("skillChecks_Int"),
+        subDiv = div.getElementsByClassName('skillCheckBtn'),
+        myArray = [];
+    for(var i = 0; i < subDiv.length; i++) {
+        var elem = subDiv[i];
+        var val = parseInt(pg.intMod);
+        if(pg.skillProf.includes(elem.id)) {
+            val += pg.proficiency;
+        }
+        if(val >= 0) val = "+".concat(val);
+        elem.value = elem.value.concat(val);
+    }
+    div = document.getElementById("skillChecks_Wis"),
+        subDiv = div.getElementsByClassName('skillCheckBtn'),
+        myArray = [];
+    for(var i = 0; i < subDiv.length; i++) {
+        var elem = subDiv[i];
+        var val = parseInt(pg.wisMod);
+        if(pg.skillProf.includes(elem.id)) {
+            val += pg.proficiency;
+        }
+        if(val >= 0) val = "+".concat(val);
+        elem.value = elem.value.concat(val);
+    }
+    div = document.getElementById("skillChecks_Cha"),
+        subDiv = div.getElementsByClassName('skillCheckBtn'),
+        myArray = [];
+    for(var i = 0; i < subDiv.length; i++) {
+        var elem = subDiv[i];
+        var val = parseInt(pg.chaMod);
+        if(pg.skillProf.includes(elem.id)) {
+            val += pg.proficiency;
+        }
+        if(val >= 0) val = "+".concat(val);
+        elem.value = elem.value.concat(val);
+    }
 }
 
 function changeHP(type){
