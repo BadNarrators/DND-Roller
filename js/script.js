@@ -75,7 +75,7 @@ function loadPg(){
         pg.skillProf.push(k);
     });
     pg.joat = false; //jack of all trades, bard feature
-    if(array[5].substring(11, array[5].length) > pg.dexMod) pg.joat = true;
+    if(array[1].substring((array[1].length)-2, array[1].length).replace(/\D/g, "") >= 2 && array[1].replace(/[0-9]/g, '').substring(array[1].length-4, array[1].length)) pg.joat = true;
 
     var jsonString= JSON.stringify(pg);
 
@@ -238,108 +238,126 @@ function checkD20(type){
             typename = "acrobazia";
             mod = pg.dexMod;
             if(pg.skillProf.includes("Acrobatics")) mod = parseInt(mod)+parseInt(pg.proficiency);
+            else if(pg.joat) mod = parseInt(mod)+parseInt(Math.floor(pg.proficiency/2));
             break;
             
         case "anh":
             typename = "manipolazione animali";
             mod = pg.wisMod;
             if(pg.skillProf.includes("Animal handling")) mod = parseInt(mod)+parseInt(pg.proficiency);
+            else if(pg.joat) mod = parseInt(mod)+parseInt(Math.floor(pg.proficiency/2));
             break;
             
         case "arc":
             typename = "arcana";
             mod = pg.intMod;
             if(pg.skillProf.includes("Arcana")) mod = parseInt(mod)+parseInt(pg.proficiency);
+            else if(pg.joat) mod = parseInt(mod)+parseInt(Math.floor(pg.proficiency/2));
             break;            
 
         case "ath":
             typename = "atletica";
             mod = pg.strMod;
             if(pg.skillProf.includes("Athletics")) mod = parseInt(mod)+parseInt(pg.proficiency);
+            else if(pg.joat) mod = parseInt(mod)+parseInt(Math.floor(pg.proficiency/2));
             break;
 
         case "dec":
             typename = "inganno";
             mod = pg.chaMod;
             if(pg.skillProf.includes("Deception")) mod = parseInt(mod)+parseInt(pg.proficiency);
+            else if(pg.joat) mod = parseInt(mod)+parseInt(Math.floor(pg.proficiency/2));
             break;
             
         case "his":
             typename = "storia";
             mod = pg.intMod;
             if(pg.skillProf.includes("History")) mod = parseInt(mod)+parseInt(pg.proficiency);
+            else if(pg.joat) mod = parseInt(mod)+parseInt(Math.floor(pg.proficiency/2));
             break;
 
         case "ins":
             typename = "intuito";
             mod = pg.wisMod;
             if(pg.skillProf.includes("Insight")) mod = parseInt(mod)+parseInt(pg.proficiency);
+            else if(pg.joat) mod = parseInt(mod)+parseInt(Math.floor(pg.proficiency/2));
             break;
             
         case "inm":
             typename = "intimidazione";
             mod = pg.chaMod;
             if(pg.skillProf.includes("Intimidation")) mod = parseInt(mod)+parseInt(pg.proficiency);
+            else if(pg.joat) mod = parseInt(mod)+parseInt(Math.floor(pg.proficiency/2));
             break;
             
         case "inv":
             typename = "investigazione";
             mod = pg.intMod;
             if(pg.skillProf.includes("Investigation")) mod = parseInt(mod)+parseInt(pg.proficiency);
+            else if(pg.joat) mod = parseInt(mod)+parseInt(Math.floor(pg.proficiency/2));
             break;
 
         case "med":
             typename = "medicina";
             mod = pg.wisMod;
             if(pg.skillProf.includes("Medicine")) mod = parseInt(mod)+parseInt(pg.proficiency);
+            else if(pg.joat) mod = parseInt(mod)+parseInt(Math.floor(pg.proficiency/2));
             break;
             
         case "nat":
             typename = "natura";
             mod = pg.intMod;
             if(pg.skillProf.includes("Nature")) mod = parseInt(mod)+parseInt(pg.proficiency);
+            else if(pg.joat) mod = parseInt(mod)+parseInt(Math.floor(pg.proficiency/2));
             break;
 
         case "pec":
             typename = "percezione";
             mod = pg.wisMod;
             if(pg.skillProf.includes("Perception")) mod = parseInt(mod)+parseInt(pg.proficiency);
+            else if(pg.joat) mod = parseInt(mod)+parseInt(Math.floor(pg.proficiency/2));
             break;
             
         case "pef":
             typename = "performance";
             mod = pg.chaMod;
             if(pg.skillProf.includes("Performance")) mod = parseInt(mod)+parseInt(pg.proficiency);
+            else if(pg.joat) mod = parseInt(mod)+parseInt(Math.floor(pg.proficiency/2));
             break;
 
         case "pes":
             typename = "persuasione";
             mod = pg.chaMod;
             if(pg.skillProf.includes("Persuasion")) mod = parseInt(mod)+parseInt(pg.proficiency);
+            else if(pg.joat) mod = parseInt(mod)+parseInt(Math.floor(pg.proficiency/2));
             break;
 
         case "rel":
             typename = "religione";
             mod = pg.intMod;
             if(pg.skillProf.includes("Religion")) mod = parseInt(mod)+parseInt(pg.proficiency);
+            else if(pg.joat) mod = parseInt(mod)+parseInt(Math.floor(pg.proficiency/2));
             break;
             
         case "sle":
             typename = "velocità di mano";
             mod = pg.dexMod;
             if(pg.skillProf.includes("Sleight of hand")) mod = parseInt(mod)+parseInt(pg.proficiency);
+            else if(pg.joat) mod = parseInt(mod)+parseInt(Math.floor(pg.proficiency/2));
             break;
 
         case "sth":
             typename = "stealth";
             mod = pg.dexMod;
             if(pg.skillProf.includes("Stealth")) mod = parseInt(mod)+parseInt(pg.proficiency);
+            else if(pg.joat) mod = parseInt(mod)+parseInt(Math.floor(pg.proficiency/2));
             break;
             
         case "sur":
             typename = "sopravvivenza";
             mod = pg.wisMod;
             if(pg.skillProf.includes("Survival")) mod = parseInt(mod)+parseInt(pg.proficiency);
+            else if(pg.joat) mod = parseInt(mod)+parseInt(Math.floor(pg.proficiency/2));
             break;
             
     }
