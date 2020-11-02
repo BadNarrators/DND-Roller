@@ -100,7 +100,7 @@ function sendMessage(msg) {
 
     var params = {
         username: hookName,
-        avatar_url: "",
+        avatar_url: "https://i.ytimg.com/vi/7yUR7d2cMF4/maxresdefault.jpg",
         content: msg
     }
 
