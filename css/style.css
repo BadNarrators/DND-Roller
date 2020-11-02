@@ -1,3 +1,13 @@
+.bg{
+    background-image: linear-gradient(to bottom right, white, darkorange);
+}
+
+.page {
+    width:900; 
+    margin-left:auto; 
+    margin-right:auto
+}
+
 .defCheck{
     height:30px;
     width:50px;
@@ -19,13 +29,13 @@
 }
 
 .skillChecksDiv{
-    width:200px;
+    width:175px;
     float:left;
 }
 
 .skillCheckBtn{
     height:25px;
-    width:175px;
+    width:165px;
 }
 
 .divAdv * {

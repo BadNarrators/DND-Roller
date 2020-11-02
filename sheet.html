@@ -7,7 +7,8 @@
 	crossorigin="anonymous"></script>
 	<script src="js/script.js"></script>
 </head>
-<body>
+<body class="bg">
+<div class="page">
 	<div id="pgDiv" style="float:left">
 		Seleziona il personaggio: 
 		<select name="pgSel" id="pgSelect" onchange="siteChangeSheet();">
@@ -55,32 +56,32 @@
 	<br><br><br>
 	<div id="skillChecksUpper">
 		<div id="skillChecks_Str" class="skillChecksDiv">
-			<input class="skillCheckBtn" type="button" id="athletics" onclick="checkD20('ath');" value="Athletics check: ">
+			<input class="skillCheckBtn" type="button" id="athletics" onclick="checkD20('ath');" value="Athletics: ">
 		</div>
 		<div id="skillChecks_Dex" class="skillChecksDiv">
-			<input class="skillCheckBtn" type="button" id="acrobatics" onclick="checkD20('acr');" value="Acrobatics check: ">
-			<input class="skillCheckBtn" type="button" id="sleight of hand" onclick="checkD20('sle');" value="Sleight of hand check: ">
-			<input class="skillCheckBtn" type="button" id="stealth" onclick="checkD20('sth');" value="Stealth check: ">
+			<input class="skillCheckBtn" type="button" id="acrobatics" onclick="checkD20('acr');" value="Acrobatics: ">
+			<input class="skillCheckBtn" type="button" id="sleight of hand" onclick="checkD20('sle');" value="Sleight of hand: ">
+			<input class="skillCheckBtn" type="button" id="stealth" onclick="checkD20('sth');" value="Stealth: ">
 		</div>
 		<div id="skillChecks_Int" class="skillChecksDiv">
-			<input class="skillCheckBtn" type="button" id="arcana" onclick="checkD20('arc');" value="Arcana check: ">
-			<input class="skillCheckBtn" type="button" id="history" onclick="checkD20('his');" value="History check: ">
-			<input class="skillCheckBtn" type="button" id="investigation" onclick="checkD20('inv');" value="Investigation check: ">
-			<input class="skillCheckBtn" type="button" id="nature" onclick="checkD20('nat');" value="Nature check: ">
-			<input class="skillCheckBtn" type="button" id="religion" onclick="checkD20('rel');" value="Religion check: ">
+			<input class="skillCheckBtn" type="button" id="arcana" onclick="checkD20('arc');" value="Arcana: ">
+			<input class="skillCheckBtn" type="button" id="history" onclick="checkD20('his');" value="History: ">
+			<input class="skillCheckBtn" type="button" id="investigation" onclick="checkD20('inv');" value="Investigation: ">
+			<input class="skillCheckBtn" type="button" id="nature" onclick="checkD20('nat');" value="Nature: ">
+			<input class="skillCheckBtn" type="button" id="religion" onclick="checkD20('rel');" value="Religion: ">
 		</div>
 		<div id="skillChecks_Wis" class="skillChecksDiv">
-			<input class="skillCheckBtn" type="button" id="animal handling" onclick="checkD20('anh');" value="Animal handling check: ">
-			<input class="skillCheckBtn" type="button" id="insight" onclick="checkD20('ins');" value="Insight check: ">
-			<input class="skillCheckBtn" type="button" id="medicine" onclick="checkD20('med');" value="Medicine check: ">
-			<input class="skillCheckBtn" type="button" id="perception" onclick="checkD20('pec');" value="Perception check: ">
-			<input class="skillCheckBtn" type="button" id="survival" onclick="checkD20('sur');" value="Survival check: ">
+			<input class="skillCheckBtn" type="button" id="animal handling" onclick="checkD20('anh');" value="Animal handling: ">
+			<input class="skillCheckBtn" type="button" id="insight" onclick="checkD20('ins');" value="Insight: ">
+			<input class="skillCheckBtn" type="button" id="medicine" onclick="checkD20('med');" value="Medicine: ">
+			<input class="skillCheckBtn" type="button" id="perception" onclick="checkD20('pec');" value="Perception: ">
+			<input class="skillCheckBtn" type="button" id="survival" onclick="checkD20('sur');" value="Survival: ">
 		</div>
 		<div id="skillChecks_Cha" class="skillChecksDiv">
-			<input class="skillCheckBtn" type="button" id="deception" onclick="checkD20('dec');" value="Deception check: ">
-			<input class="skillCheckBtn" type="button" id="intimidation" onclick="checkD20('inm');" value="Intimidation check: ">
-			<input class="skillCheckBtn" type="button" id="performance" onclick="checkD20('pef');" value="Performance check: ">
-			<input class="skillCheckBtn" type="button" id="persuasion" onclick="checkD20('pes');" value="Persuasion check: ">
+			<input class="skillCheckBtn" type="button" id="deception" onclick="checkD20('dec');" value="Deception: ">
+			<input class="skillCheckBtn" type="button" id="intimidation" onclick="checkD20('inm');" value="Intimidation: ">
+			<input class="skillCheckBtn" type="button" id="performance" onclick="checkD20('pef');" value="Performance: ">
+			<input class="skillCheckBtn" type="button" id="persuasion" onclick="checkD20('pes');" value="Persuasion: ">
 		</div>
 	</div>
 	
@@ -90,7 +91,7 @@
 		<br><br><br><br><br><input type="button" id="resetUrl" value="Resetta l'URL del canale Discord" onClick="eraseCookie('discordUrl'); window.open('index.html','_self');">
 		<br><br>
 	</div>
-
+</div>
 </body>
 <script>
 	$(document).ready(function(){   
