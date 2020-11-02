@@ -1,3 +1,4 @@
+const hookName = "Dices&Dragons";
 
 function setCookie(name,value,days) {
     var expires = "";
@@ -98,7 +99,7 @@ function sendMessage(msg) {
     request.setRequestHeader('Content-type', 'application/json');
 
     var params = {
-        username: "Tiradadi",
+        username: hookName,
         avatar_url: "",
         content: msg
     }
@@ -151,6 +152,9 @@ function checkD20(type){
     name="**`".concat(name).concat("`**");
     let msg = name.concat(" ha tirato **");
     let rand = randD20();
+    let rand2;
+    let adv = document.querySelector('input[name="adv"]:checked').value;
+    if(adv != "nor") rand2 = randD20();
     let typename = "";
     let mod = 0;
 
@@ -339,15 +343,48 @@ function checkD20(type){
             break;
             
     }
+    if(adv == "adv") {
+        if(rand2 > rand) {
+            let tot = rand2 + mod;
+            msg = msg.concat(typename).concat("** con *vantaggio* ottenendo **").concat(tot).concat("** (( ~~").concat(rand).concat("~~ )").concat(rand2);
+            if(mod>=0)
+                msg = msg.concat(" + ").concat(mod).concat(").");
+            else
+                msg = msg.concat("  ").concat(Math.abs(mod)).concat(").");
+        }else{
+            let tot = rand + mod;
+            msg = msg.concat(typename).concat("** con *vantaggio* ottenendo **").concat(tot).concat("** (( ~~").concat(rand2).concat("~~ )").concat(rand);
+            if(mod>=0)
+                msg = msg.concat(" + ").concat(mod).concat(").");
+            else
+                msg = msg.concat("  ").concat(Math.abs(mod)).concat(").");
+        }
+    }else if(adv == "dis"){
+        if(rand2 > rand) {
+            let tot = rand + mod;
+            msg = msg.concat(typename).concat("** con *svantaggio* ottenendo **").concat(tot).concat("** (( ~~").concat(rand2).concat("~~ )").concat(rand);
+            if(mod>=0)
+                msg = msg.concat(" + ").concat(mod).concat(").");
+            else
+                msg = msg.concat("  ").concat(Math.abs(mod)).concat(").");
+        }else{
+            let tot = rand + mod;
+            msg = msg.concat(typename).concat("** con *svantaggio* ottenendo **").concat(tot).concat("** (( ~~").concat(rand).concat("~~ )").concat(rand2);
+            if(mod>=0)
+                msg = msg.concat(" + ").concat(mod).concat(").");
+            else
+                msg = msg.concat("  ").concat(Math.abs(mod)).concat(").");
+        }
+    }else{
+        let tot = rand + mod;
 
-    let tot = rand + mod;
-
-    msg = msg.concat(typename).concat("** ottenendo **").concat(tot).concat("** (").concat(rand)
-    if(mod>=0)
-        msg = msg.concat(" + ").concat(mod).concat(").");
-    else
-        msg = msg.concat("  ").concat(Math.abs(mod)).concat(").");
-
+        msg = msg.concat(typename).concat("** ottenendo **").concat(tot).concat("** (").concat(rand)
+        if(mod>=0)
+            msg = msg.concat(" + ").concat(mod).concat(").");
+        else
+            msg = msg.concat("  ").concat(Math.abs(mod)).concat(").");
+    }
+    
     sendMessage(msg);
 }
 

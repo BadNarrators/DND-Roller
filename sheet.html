@@ -42,6 +42,15 @@
 		&nbsp&nbsp&nbsp&nbsp <input class="defCheck" type="button" id="wisSave" onClick="checkD20('wisSave');" value="Wisdom saving throw: ">
 		<br><div class="stat" id="chaDiv">Carisma: </div><input class="defCheck" type="button" id="cha" onclick="checkD20('cha');" value="Charisma check: ">
 		&nbsp&nbsp&nbsp&nbsp <input class="defCheck" type="button" id="chaSave" onClick="checkD20('chaSave');" value="Charisma saving throw: ">
+	
+		<div style="float:right; text-align:right" id="advDiv">
+			<label for="advantage">VANTAGGIO</label>
+			<input type="radio" id="advantage" name="adv" value="adv"><br>
+			<label for="normal">NORMALE</label>
+			<input type="radio" id="normal" name="adv" value="nor" checked><br>
+			<label for="disadvantage">SVANTAGGIO</label>
+			<input type="radio" id="disadvantage" name="adv" value="dis">
+		</div>
 	</div>
 	<br><br><br>
 	<div id="skillChecksUpper">
@@ -76,6 +85,7 @@
 	</div>
 	
 	<div style="position:absolute; bottom:0">
+		<!--<button type="submit" value="test" onclick="fetch('https://www.dnd5eapi.co/api/spells/green-flame-blade/').then(res=>res.json()).then(data => console.log(data));"-->
 		Tira un dado: <input type="button" id="d20" value="D20" onclick="let r=soloD20(); sendMessage(r);"> &nbsp&nbsp&nbsp Mod:<input type="number" id="d20mod" size="3">
 		<br><br><br><br><br><input type="button" id="resetUrl" value="Resetta l'URL del canale Discord" onClick="eraseCookie('discordUrl'); window.open('index.html','_self');">
 		<br><br>

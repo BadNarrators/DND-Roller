@@ -28,6 +28,10 @@
     width:175px;
 }
 
+.divAdv * {
+    float:right;
+}
+
 /* not used yet, might use for separating different types of checks
 .collapsible {
     background-color: #eee;
