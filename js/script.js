@@ -82,8 +82,8 @@ function loadPg(){
         }
     });
     pg.joat = false; //jack of all trades, bard feature
-    if(array[1].substring((array[1].length)-2, array[1].length).replace(/\D/g, "") >= 2 && array[1].replace(/[0-9]/g, '').substring(array[1].length-4, array[1].length)) pg.joat = true;
-
+    if(array[1].substring((array[1].length)-2, array[1].length).replace(/\D/g, "") >= 2 && array[1].replace(/[0-9]/g, '').substring(array[1].length-4, array[1].length) == "Bard") pg.joat = true;
+    
     var jsonString= JSON.stringify(pg);
 
     //eraseCookie(pg.name);
